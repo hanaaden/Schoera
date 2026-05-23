@@ -62,4 +62,8 @@ export const AddTimeTableSchema = z.object({
     }),
 })
 
+export const addenrollmentSchema = z.object({
+    classCourseId : z.number(),
+})
+
 

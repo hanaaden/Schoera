@@ -1,8 +1,8 @@
 import {Request , Response} from "express"
-import {pool} from "../config/db"
-import { AddTeacherSchema } from "../validations/validation"
+import {pool} from "../../../config/db";
+import CustomRequest from '../../../types/customRequest';
+import { AddTeacherSchema } from "../../../validations/validation"
 import bcrypt from "bcrypt"
-import CustomRequest from "../types/customRequest"
 
 export const addTeacher = async(req: CustomRequest, res: Response)=>{
  try {

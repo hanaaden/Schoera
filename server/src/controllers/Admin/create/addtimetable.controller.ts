@@ -1,8 +1,9 @@
 import { Response } from "express";
-import customRequest from "../types/customRequest"
-import {pool} from "../config/db"
-import { AddTimeTableSchema } from "../validations/validation";
-export const addTimeTable = async (req: customRequest, res: Response) => {
+
+import {pool} from "../../../config/db";
+import CustomRequest from '../../../types/customRequest';
+import { AddTimeTableSchema } from "../../../validations/validation";
+export const addTimeTable = async (req: CustomRequest, res: Response) => {
     try {
         const userRole = req.user?.role
         if(!userRole){

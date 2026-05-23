@@ -1,7 +1,7 @@
 import { Response } from "express";
-import {pool} from "../config/db"
-import CustomRequest from "../types/customRequest";
-import { addEventSchema } from "../validations/validation";
+import {pool} from "../../../config/db";
+import CustomRequest from '../../../types/customRequest';
+import { addEventSchema } from "../../../validations/validation";
 
 export const addEvent = async (req: CustomRequest , res: Response) => {
     try {

@@ -1,7 +1,8 @@
 import {Response} from 'express';
-import {pool} from "../config/db";
-import CustomRequest from '../types/customRequest';
-import { AddClassSchema, AddFacultySchema } from '../validations/validation';
+
+import {pool} from "../../../config/db";
+import CustomRequest from '../../../types/customRequest';
+import { AddClassSchema, AddFacultySchema } from '../../../validations/validation';
 
 export const addClass = async (req: CustomRequest , res: Response) => {
     try {
