@@ -1,10 +1,10 @@
 import {Router} from "express";
-import { addEnrollment } from "../../../controllers/student/create/addenrollemt.controller";
+import { addAttendence } from "../../../controllers/teacher/create/addattendence.controller";
 import { authMiddleware } from "../../../middlewares/auth.middleware";
 import { roleChecker } from "../../../middlewares/rolechecker";
 
 const router = Router();
 
-router.post("/addenrollment", authMiddleware,roleChecker(["student"]), addEnrollment);
+router.post("/addattendence", authMiddleware,roleChecker(["teacher"]), addAttendence);
 
 export default router;

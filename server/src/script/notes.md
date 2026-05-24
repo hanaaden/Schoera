@@ -12,8 +12,8 @@
 
 adding class
 {
-   "className" : "4C",
-   "facultyId" : "1"
+   "className" : "5C",
+   "facultyId" : 4
 }
 
 adding student 
@@ -37,4 +37,10 @@ adding class course
     "classId" : 3,
     "courseId" :1,
     "teacherId" :1
+}
+
+adding enrollement 
+
+{
+"classCourseId": 1
 }

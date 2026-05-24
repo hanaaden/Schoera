@@ -1,5 +1,5 @@
 import { PassThrough } from "node:stream";
-import {email, z} from "zod"
+import {email, string, z} from "zod"
 
 export const SignupSchema = z.object({
     email : z.string().email("invalid email address"),
@@ -22,7 +22,7 @@ export const AddFacultySchema = z.object({
     name : z.string().min(3 , "faculty name must be at least 3 characters long")
 })
 export const AddClassSchema = z.object({
-    className : z.string().min(3 , "class name must be at least 3 characters long"),
+    className : z.string().min(2, "class name must be at least 3 characters long"),
     facultyId : z.number()
 })
 export const AddStudentSchema = z.object({
@@ -66,4 +66,12 @@ export const addenrollmentSchema = z.object({
     classCourseId : z.number(),
 })
 
-
+export const addAttendenceSchema = z.object({
+    classCourseId : z.number(),
+    studentId : z.number(),
+    attendanceDate : z.string().refine((date) => !isNaN(Date.parse(date)), {
+        message: "Invalid date format",
+    }),
+    status : z.enum(["present", "absent", "late"])
+    
+})
