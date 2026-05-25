@@ -16,6 +16,7 @@ import addClassCourse from "./routes/admin/create/addclasscourse.router"
 import addEvent from "./routes/admin/create/addevent.router"
 import addTimeTable from "./routes/admin/create/addtimetable.router"
 import addEnrollment  from "./routes/student/create/addenrollement.router"
+import addAttendence  from "./routes/teacher/create/addattendence.router"
 const app = express()
 app.use(cors())
 app.use(express.json())
@@ -34,7 +35,7 @@ app.use("/", addClassCourse)
 app.use("/", addEvent)
 app.use("/", addTimeTable)
 app.use("/" , addEnrollment)
-
+app.use("/" , addAttendence)
 app.listen(3131 ,  ()=>{
    console.log("server is running")
 })

@@ -68,10 +68,14 @@ export const addenrollmentSchema = z.object({
 
 export const addAttendenceSchema = z.object({
     classCourseId : z.number(),
-    studentId : z.number(),
     attendanceDate : z.string().refine((date) => !isNaN(Date.parse(date)), {
         message: "Invalid date format",
     }),
-    status : z.enum(["present", "absent", "late"])
+    records: z.array(
+  z.object({
+    studentId: z.number(),
+    status: z.enum(["present", "absent", "late"])
+  })
+)
     
 })
